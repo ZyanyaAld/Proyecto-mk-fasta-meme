@@ -1,5 +1,6 @@
-
 # Proyecto de Automatización para la Identificación de Sitios de Unión de Factores de Transcripción en E. coli en experimentos de ChIP-Seq
+
+Autor: Zyanya Valentina Velazquez Aldrete
 
 ## Resumen
 
@@ -24,6 +25,8 @@ Contiene información sobre las regiones de unión de los 144 factores de transc
 ### Genoma Completo de E. coli
 Disponible en formato FASTA.
 
+Archivo: E_coli_K12_MG1655_U00096.3.txt
+
 ## Objetivos del Proyecto
 
 ### Generación de Archivos FASTA
@@ -31,12 +34,6 @@ Desarrollar un programa que extraiga y compile las secuencias de picos para cada
 
 ### Automatización del Análisis de Motivos
 Crear un script que automatice la ejecución del software `meme` para cada archivo FASTA generado, facilitando la identificación de motivos en los sitios de unión.
-
-### Ejemplo de Comando para `meme`
-
-```bash
-meme AraC_peaks.fasta -oc AraC/. -mod oops -nmotifs 1 -minw 14 -maxw 20 -bfile ../U00096.3.bfile -dna -maxsize 100000 -norand -seed 10
-```
 
 ## Colaboración y Recursos
 
