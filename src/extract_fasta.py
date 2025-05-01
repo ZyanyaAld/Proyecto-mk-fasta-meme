@@ -66,9 +66,6 @@ def guardar_fasta_por_tf(secuencias_por_tf, output_dir):
             for header, secuencia in entradas:
                 f.write(f"{header}\n{secuencia}\n")
 
-import argparse
-import time
-
 def main():
     parser = argparse.ArgumentParser(description="Extrae secuencias FASTA a partir de coordenadas.")
     parser.add_argument(
