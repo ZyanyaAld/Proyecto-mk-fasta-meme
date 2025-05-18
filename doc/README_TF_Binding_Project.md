@@ -35,6 +35,42 @@ Desarrollar un programa que extraiga y compile las secuencias de picos para cada
 ### Automatización del Análisis de Motivos
 Crear un script que automatice la ejecución del software `meme` para cada archivo FASTA generado, facilitando la identificación de motivos en los sitios de unión.
 
+### 📁 Modularización del Extractor de Secuencias
+
+Como parte del avance del proyecto, el script original `extract_fasta.py` fue refactorizado y modularizado para mejorar su organización, reutilización y mantenibilidad. Esta nueva versión se ejecuta desde un archivo principal (`main.py`) y se apoya en módulos especializados.
+
+####  Estructura del código modular
+
+extractor_secuencias/
+├── src/
+│   ├── main.py          # Punto de entrada del programa
+│   ├── genome.py        # Lectura del genoma desde archivo
+│   ├── peaks.py         # Procesamiento del archivo de picos
+│   └── io_utils.py      # Escritura de archivos FASTA por TF
+├── data/
+│   ├── E_coli_genome.fasta
+│   └── tf_peaks.txt
+└── results/
+    └── output_estrucmodul/
+
+#### Ejecución
+
+Para extraer las secuencias, ejecutar desde la raíz del proyecto:
+
+python src/main.py
+
+También es posible especificar parámetros personalizados:
+
+python src/main.py \
+  -g data/E_coli_genome.fasta \
+  -p data/tf_peaks.txt \
+  -o results/output_estrucmodul \
+  --tf LexA
+
+#### 📤 Salida
+
+Los archivos generados se guardan en el directorio `results/output_estrucmodul/`, uno por cada factor de transcripción (TF) encontrado en el archivo de picos.
+
 ## Colaboración y Recursos
 
 El proyecto será colaborativo, trabajando conjuntamente con un investigador que dispone de un servidor preparado para ejecutar el programa `meme`. Se compartirán los siguientes recursos con el colaborador:
