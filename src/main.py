@@ -3,25 +3,7 @@ import time
 from genome import cargar_genoma
 from peaks import leer_archivo_picos
 from io_utils import guardar_fasta_por_tf
-
-def extraer_secuencias(peaks_data, genoma):
-    """
-    Agrupa las secuencias extraídas por TF_name en un diccionario con headers.
-    """
-    secuencias_por_tf = {}
-    for entrada in peaks_data:
-        tf = entrada['TF_name']
-        start = entrada['start']
-        end = entrada['end']
-        if start < 0 or end > len(genoma) or start >= end:
-            print(f"Coordenadas inválidas: {entrada}")
-            continue
-        secuencia = genoma[start:end]
-        if tf not in secuencias_por_tf:
-            secuencias_por_tf[tf] = []
-        header = f">{tf}_{start}_{end}"
-        secuencias_por_tf[tf].append((header, secuencia))
-    return secuencias_por_tf
+from extract_fasta import extraer_secuencias
 
 def main():
     parser = argparse.ArgumentParser(description="Extrae secuencias FASTA a partir de coordenadas.")
