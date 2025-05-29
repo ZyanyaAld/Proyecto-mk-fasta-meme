@@ -56,8 +56,23 @@
   - Se registra en `log.out`
 
 ---
+### Caso 6: Archivo de picos mal formateado
+- *Entradas*:
+  - Archivo con columnas faltantes
+- *Esperado*:
+  - Error: Invalid peak file format. Missing required columns.
+  - No se generan archivos
 
-### Caso 6: Directorio de salida no existe
+---
+
+### Caso 7: Archivo de genoma mal formateado
+- *Entradas*:
+  - FASTA inválido
+- *Esperado*:
+  - Error: Invalid genome file format. Missing required columns.
+
+
+### Caso 8: Directorio de salida no existe
 - **Entradas**:
   - Archivo de picos y genoma válidos
   - Directorio de salida inexistente
